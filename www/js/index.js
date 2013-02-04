@@ -16,11 +16,11 @@ var app = {
 };
 
 
-$('#open').click = function(){
+$('#open').click(function(){
      window.plugins.childBrowser.showWebPage('http://www.yahoo.com', { showLocationBar: false });
 
-}
+});
 
-$('#close').click = function(){
+$('#close').click(function(){
      window.plugins.childBrowser.close();
-}
+});
