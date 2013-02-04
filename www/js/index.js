@@ -33,29 +33,30 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        // app.receivedEvent('deviceready');
+        setTimeout(function() {
+            alert('launching ...');
+            window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: false });
+            alert('launched ...');
+        }, 5000);
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        // var parentElement = document.getElementById(id);
-        // var listeningElement = parentElement.querySelector('.listening');
-        // var receivedElement = parentElement.querySelector('.received');
+  //   receivedEvent: function(id) {
+  //       // var parentElement = document.getElementById(id);
+  //       // var listeningElement = parentElement.querySelector('.listening');
+  //       // var receivedElement = parentElement.querySelector('.received');
 
-        // listeningElement.setAttribute('style', 'display:none;');
-        // receivedElement.setAttribute('style', 'display:block;');
+  //       // listeningElement.setAttribute('style', 'display:none;');
+  //       // receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
-  //       window.plugins.WifiInfo.get(function(wifi){ 
-  //       	document.getElementById('wifiText').innerHTML = "<a>WIFI: "+wifi.SSID+"</a>";
-		//     //alert(wifi.SSID); 
-		//     document.getElementById('ipText').innerHTML = "<a>IP: "+wifi.IpAddress+"</a>";
+  //       console.log('Received Event: ' + id);
+  // //       window.plugins.WifiInfo.get(function(wifi){ 
+  // //       	document.getElementById('wifiText').innerHTML = "<a>WIFI: "+wifi.SSID+"</a>";
+		// //     //alert(wifi.SSID); 
+		// //     document.getElementById('ipText').innerHTML = "<a>IP: "+wifi.IpAddress+"</a>";
 		    
-		// });
+		// // });
 
-        setTimeout(function() {
-            console.log('launching ...');
-            window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: false });
-            console.log('launched ...');
-        }, 5000);
-    }
+        
+  //   }
 };
